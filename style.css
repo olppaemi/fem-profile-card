@@ -1,0 +1,119 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--dark-cyan);
+  background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right 42vw bottom 45vh, left 45vw top 47vh;
+}
+
+.card {
+  width: 32.6rem;
+  height: 37.4rem;
+  background-color: white;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 35rem;
+  }
+}
+
+.card__header {
+  width: 100%;
+  height: 14rem;
+  background: url(images/bg-pattern-card.svg);
+  margin-bottom: 7.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card__header img {
+  border-radius: 50%;
+  -webkit-transform: translateY(8rem);
+          transform: translateY(8rem);
+  border: 5px solid white;
+}
+
+.card__body .info {
+  margin-bottom: 2.8rem;
+}
+
+.card__body .info .name {
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.card__body .info .name .age {
+  color: var(--gray-blue);
+  font-weight: 400;
+}
+
+.card__body .info .country {
+  color: var(--gray-blue);
+  font-size: 1.5rem;
+}
+
+.card__body .stats {
+  height: 8.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #ddd;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.card__body .stats .stat__value {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card__body .stats .stat__name {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  letter-spacing: 1px;
+}

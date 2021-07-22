@@ -1,0 +1,114 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-cyan);
+  background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right 42vw bottom 45vh, left 45vw top 47vh;
+}
+
+.card {
+  $card-width: 32.6rem;
+  $card-height: 37.4rem;
+  $card-bg: white;
+  $card-borer-radius: 1rem;
+  $card__header-width: 32.6rem;
+  $card__header-height: 14rem;
+  $card__header-margin-bottom: 7.5rem;
+  $card__body-info-margin-bottom: 2.8rem;
+  $card__body-info-name-margin-bottom: 1.6rem;
+  $card__body-stat__value-margin-bottom: 1rem;
+  $card__body-stats-padding-left: 4rem;
+  $card__body-stats-padding-right: 4rem;
+
+  width: $card-width;
+  height: $card-height;
+  background-color: $card-bg;
+  text-align: center;
+  border-radius: $card-borer-radius;
+
+  @media (min-width: 1024px) {
+    $card-width: 35rem;
+    width: $card-width;
+  }
+
+  &__header {
+    width: 100%;
+    height: $card__header-height;
+    background: url(images/bg-pattern-card.svg);
+    margin-bottom: $card__header-margin-bottom;
+    border-top-left-radius: $card-borer-radius;
+    border-top-right-radius: $card-borer-radius;
+
+    img {
+      border-radius: 50%;
+      transform: translateY(8rem);
+      border: 5px solid white;
+    }
+  }
+
+  &__body {
+    .info {
+      margin-bottom: $card__body-info-margin-bottom;
+      .name {
+        font-weight: 700;
+        margin-bottom: $card__body-info-name-margin-bottom;
+        .age {
+          color: var(--gray-blue);
+          font-weight: 400;
+        }
+      }
+      .country {
+        color: var(--gray-blue);
+        font-size: 1.5rem;
+      }
+    }
+
+    .stats {
+      height: 8.8rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      padding-left: $card__body-stats-padding-left;
+      padding-right: $card__body-stats-padding-right;
+
+      .stat {
+        &__value {
+          font-weight: 700;
+          margin-bottom: $card__body-stat__value-margin-bottom;
+        }
+        &__name {
+          font-size: 1rem;
+          color: var(--dark-gray);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
